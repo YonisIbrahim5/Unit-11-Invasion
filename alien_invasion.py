@@ -59,10 +59,6 @@ class AlienInvasion:
             self.ship.moving_right = False
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = False
-        elif event.key == pygame.K_UP:
-            self.ship.moving_up = False
-        elif event.key == pygame.K_DOWN:
-            self.ship.moving_down = False
 
     def _check_keydown_event(self, event):
         if event.key == pygame.K_RIGHT:
@@ -77,10 +73,6 @@ class AlienInvasion:
             self.running = False
             pygame.quit()
             sys.exit()
-        elif event.key == pygame.K_UP:
-            self.ship.moving_up = True
-        elif event.key == pygame.K_DOWN:
-            self.ship.moving_down = True
 
 if __name__ == '__main__':
     ai = AlienInvasion()
