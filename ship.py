@@ -64,8 +64,7 @@ class Ship:
         elif self.moving_right:
             angle = 0
         
-        self.image = pygame.transform.rotate(self.settings.ship_original_image, angle)
-        self.rect = self.image.get_rect(center=self.rect.center)
+        self.image = pygame.transform.rotate(self.image, angle)
 
      
     def draw(self):
