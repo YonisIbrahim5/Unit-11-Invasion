@@ -72,6 +72,8 @@ class AlienInvasion:
         
         if self.alien_fleet.check_destroyed_status():
             self._reset_level()
+            self.settings.increase_difficulty()
+            
 
 
     def _check_game_status(self):
