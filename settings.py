@@ -42,6 +42,7 @@ class Settings:
             self.fleet_drop_speed = 40
             self.button_w = 200
             self.button_h = 50
+            self.alien_points = 50
 
     def increase_difficulty(self):
          self.ship_speed *= self.difficulty_scale
