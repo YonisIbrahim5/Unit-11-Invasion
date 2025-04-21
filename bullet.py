@@ -1,3 +1,8 @@
+"""
+Bullet module for Alien Invasion.
+
+This module is reponsible for the bullets being fire from the Ship.
+"""
 import pygame
 from pygame.sprite import Sprite
 from typing import TYPE_CHECKING
@@ -7,6 +12,12 @@ if TYPE_CHECKING:
     from alien_invasion import AlienInvasion
 
 class Bullet(Sprite):
+    """
+    Class for the bullet.
+
+    Args:
+        game (AlienInvasion): Main game.
+    """
     def __init__(self, game: 'AlienInvasion'):
         super().__init__()
         
@@ -23,9 +34,15 @@ class Bullet(Sprite):
         self.y = float(self.rect.y)
     
     def update(self):
+        """
+        Moves the bullets on the screen.
+        """
         self.y -= self.settings.bullet_speed
         self.rect.y = self.y
 
     def draw_bullet(self):
+        """
+        Draws the bullets on the screen.
+        """
         self.screen.blit(self.image, self.rect)
 

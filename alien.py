@@ -1,3 +1,8 @@
+"""
+Alien module for Alien Invasion.
+
+This class is responsible for controlling the Aliens.
+"""
 import pygame
 from pygame.sprite import Sprite
 from typing import TYPE_CHECKING
@@ -7,7 +12,18 @@ if TYPE_CHECKING:
     from alien_fleet import AlienFleet
 
 class Alien(Sprite):
+    """
+    Class for aliens.
+    """
     def __init__(self, fleet: "AlienFleet", x: float, y: float):
+        """
+        Initializes aliens.
+
+        Args:
+            fleet (AlienFleet): Alien fleet.
+            x (float): Horizontal position.
+            y (float): Vertical position.
+        """
         super().__init__()
         self.fleet = fleet
         self.screen = fleet.game.screen
@@ -26,16 +42,28 @@ class Alien(Sprite):
         self.x = float(self.rect.x)
     
     def update(self):
+        """
+        Update the alien's position.
+        """
         temp_speed = self.settings.fleet_speed
-        
+
         self.x += temp_speed * self.fleet.fleet_direction
         self.rect.x = self.x
         self.rect.y = self.y
 
     def check_edges(self):
+        """
+        Check if the alien has reached the edge.
+
+        Returns:
+            bool: True if the alien is at the edges of the screen.
+        """
         return (self.rect.right >= self.boundaries.right or self.rect.left <= self.boundaries.left)
     
     def draw_alien(self):
+        """
+        Draws the alien on the screen.
+        """
         self.screen.blit(self.image, self.rect)
 
 
