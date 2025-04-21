@@ -9,6 +9,7 @@ class Settings:
         self.FPS = 60
         self.bg_file = Path.cwd() / 'Assets' / 'images' / 'spaceBG.jpg'
         self.difficulty_scale = 1.1
+        self.scores_file = Path.cwd() / 'Assets' / 'file' / 'scores.json'
 
         self.ship_file = Path.cwd() / 'Assets' / 'images' / 'PurpleShip.png'
         self.ship_file_w = 40
@@ -31,6 +32,7 @@ class Settings:
         self.button_font_size = 48
         self.HUD_font_size = 20
         self.font_file = Path.cwd() / 'Assets' / 'Fonts' / 'Silkscreen' / 'Silkscreen-Bold.ttf'
+        
 
     def initialize_dynamic_settings(self):
             
